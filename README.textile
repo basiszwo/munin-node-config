@@ -1,0 +1,30 @@
+h2. Configuration for munin node
+
+In order to have an easy setup for a new munin node just grab this configuration.
+
+h3. Installation
+
+on your munin node do:
+<pre><code>
+cd ~
+git clone git://github.com/basiszwo/munin-node-config.git
+sudo apt-get install munin-node (for ubuntu systems; just install the munin-node packages)
+mv munin-node-config/* /etc/munin
+sudo /etc/init.d/munin-node restart
+</code></pre>
+
+You may link or install and link your favorite munin plugins.
+
+h3. Configuration
+
+Only two things need be adjusted.
+
+# the ip address(es) of your munin server(s) in munin-node.conf
+# the "[rails_*]" section in plugin-conf.d/munin-node
+
+h3. Plugins
+
+* http://github.com/basiszwo/munin-varnish
+* http://github.com/barttenbrinke/munin-plugins-rails
+
+* find many more on "muninexchange":http://muninexchange.projects.linpro.no/
