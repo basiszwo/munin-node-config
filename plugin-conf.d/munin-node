@@ -74,5 +74,12 @@ env.log_file '/var/www/sites/<APPNAME>/shared/log/production.log'
 user <USER>
 command ruby %c
 
-[varnish]
-user root
+# Varnish v2 plugins; see http://github.com/basiszwo/munin-varnish
+[varnish_*]
+  user root
+  env.varnishstat varnishstat
+  env.name
+
+# Varnish v1 plugins
+# [varnish]
+# user root
